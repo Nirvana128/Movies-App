@@ -138,6 +138,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         const SizedBox(height: 32),
                         CustomButton(
                           text: screens[index].primaryButtonText,
+                          isOnboarding: true,
                           onPressed: () {
                             _pageController.nextPage(
                               duration: const Duration(milliseconds: 300),
@@ -191,6 +192,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           const SizedBox(height: 32),
                         ],
                         CustomButton(
+                          isOnboarding: true,
                           text: screens[index].primaryButtonText,
                           onPressed: () {
                             if (currentIndex == screens.length - 1) {
@@ -206,6 +208,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         if (screens[index].hasBackButton) ...[
                           const SizedBox(height: 16),
                           CustomButton(
+                            isOnboarding: true,
                             text: 'Back',
                             isOutlined: true,
                             onPressed: () {

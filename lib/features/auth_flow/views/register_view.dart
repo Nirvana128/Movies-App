@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/extensions/responsive_padding_extension.dart';
 import 'package:movies_app/core/extensions/responsive_size_extension.dart';
-import 'package:movies_app/core/extensions/responsive_sized_box_extension.dart';
 import 'package:movies_app/core/theme/app_colors.dart';
 import 'package:movies_app/core/theme/app_text_styles.dart';
+import 'package:movies_app/core/widgets/custom_button.dart';
 import 'package:movies_app/core/widgets/custom_text_field.dart';
 import 'package:movies_app/features/auth_flow/widgets/language_switcher.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
@@ -36,7 +36,7 @@ class RegisterView extends StatelessWidget {
             ),
             CustomTextField(
               hintText: AppLocalizations.of(context)!.password,
-                prefixIcon: 'assets/icons/password.png',
+              prefixIcon: 'assets/icons/password.png',
             ),
             CustomTextField(
               hintText: AppLocalizations.of(context)!.confirmPassword,
@@ -46,7 +46,10 @@ class RegisterView extends StatelessWidget {
               hintText: AppLocalizations.of(context)!.phoneNumber,
               prefixIcon: 'assets/icons/phone.png',
             ),
-            
+            CustomButton(
+              text: AppLocalizations.of(context)!.createAccount,
+              onPressed: () {},
+            ),
             LanguageToggle(),
           ],
         ),

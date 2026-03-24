@@ -10,4 +10,8 @@ class AppTextStyles {
   static TextStyle regular16({Color color = AppColors.white}) {
     return TextStyle(fontSize: 16, color: color);
   }
+
+  static TextStyle regular20({Color color = AppColors.white}) {
+    return TextStyle(fontSize: 20, color: color);
+  }
 }
