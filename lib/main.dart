@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:movies_app/core/constant/app_routes.dart';
 import 'package:movies_app/core/responsive/responsive_config.dart';
 import 'package:movies_app/core/theme/app_theme.dart';
@@ -35,8 +36,23 @@ class MoviesApp extends StatelessWidget {
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(languageProvider.currentLanguage),
-      theme: AppTheme.theme,
 
+      // dynamic font based on locale
+      builder: (context, child) {
+        final lang = languageProvider.currentLanguage;
+
+        return Theme(
+          data: Theme.of(context).copyWith(
+            textTheme: lang == 'ar'
+                ? GoogleFonts.cairoTextTheme(Theme.of(context).textTheme)
+                : GoogleFonts.robotoTextTheme(Theme.of(context).textTheme),
+          ),
+          child: child!,
+        );
+      },
+
+
+      theme: AppTheme.theme,
       initialRoute: AppRoutes.splash,
       routes: {
         AppRoutes.splash: (context) => const SplashScreen(),

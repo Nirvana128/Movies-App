@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/core/theme/app_text_styles.dart';
 import '../theme/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
-  final IconData prefixIcon;
+  final String prefixIcon;
   final bool isPassword;
   final Widget? suffixIcon;
 
@@ -19,17 +20,17 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       obscureText: isPassword,
-      style: const TextStyle(color: AppColors.white),
+      style: AppTextStyles.regular16(color: AppColors.white),
       decoration: InputDecoration(
         hintText: hintText,
-        hintStyle: const TextStyle(color: AppColors.grey),
-        prefixIcon: Icon(prefixIcon, color: AppColors.white),
+        hintStyle: AppTextStyles.regular16(color: AppColors.white),
+        prefixIcon: ImageIcon(AssetImage(prefixIcon), color: AppColors.white),
         suffixIcon: suffixIcon,
         filled: true,
-        fillColor: AppColors.backgroundColor,
+        fillColor: AppColors.secondaryBackgroundColor,
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
-          borderSide: const BorderSide(color: AppColors.grey),
+          borderSide: const BorderSide(color: AppColors.transparent),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),

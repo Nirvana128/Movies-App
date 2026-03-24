@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:movies_app/core/theme/app_colors.dart';
+
 
 class AppTextStyles {
-  static TextStyle roboto16Medium({Color color = Colors.black}) {
-    return GoogleFonts.roboto(
-      fontSize: 16,
-      fontWeight: FontWeight.w500,
-      color: color,
-    );
+  static TextStyle medium16({Color color = AppColors.white}) {
+    return TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: color);
+  }
+
+  static TextStyle regular16({Color color = AppColors.white}) {
+    return TextStyle(fontSize: 16, color: color);
   }
 }
