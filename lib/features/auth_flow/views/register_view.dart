@@ -5,6 +5,11 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      color: Colors.green,
+      child: const Center(
+        child: Text('Register View'),
+      ),
+    );
   }
 }
