@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constant/app_routes.dart';
-import '../../core/theme/app_colors.dart';
+import 'package:movies_app/core/theme/app_colors.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

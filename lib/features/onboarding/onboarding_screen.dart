@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/constant/app_routes.dart';
+import '../../core/constant/app_routes.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/custom_button.dart';
 
@@ -194,7 +194,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           text: screens[index].primaryButtonText,
                           onPressed: () {
                             if (currentIndex == screens.length - 1) {
-                              Navigator.pushReplacementNamed(context, AppRoutes.register);
+                              Navigator.pushNamedAndRemoveUntil(context, AppRoutes.register, (route) => false);
                             } else {
                               _pageController.nextPage(
                                 duration: const Duration(milliseconds: 300),

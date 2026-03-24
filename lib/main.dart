@@ -3,7 +3,7 @@ import 'package:movies_app/core/constant/app_routes.dart';
 import 'package:movies_app/core/theme/app_theme.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/onboarding/onboarding_screen.dart';
-import 'features/splash/splash_screen.dart';
+import 'package:movies_app/features/splash/splash_screen.dart';
 
 void main() {
   runApp(const MoviesApp());
