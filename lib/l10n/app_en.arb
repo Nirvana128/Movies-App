@@ -19,5 +19,11 @@
   "createAccount": "Create Account",
   "@createAccount": {},
   "alreadyHaveAnAccount": "Already have an account? ",
-  "@alreadyHaveAnAccount": {}
+  "@alreadyHaveAnAccount": {},
+  "forgetPassword": "Forget Password?",
+  "dontHaveAccount": "Don't Have Account ? ",
+  "createOne": "Create One",
+  "or": "Or",
+  "loginWithGoogle": "Login with Google",
+  "verifyEmail": "Verify Email"
 }

@@ -10,5 +10,11 @@
     "confirmPassword": "تأكيد كلمة المرور",
     "phoneNumber": "رقم الهاتف",
     "createAccount": "إنشاء حساب",
-    "alreadyHaveAnAccount": "هل لديك حساب بالفعل؟"
+    "alreadyHaveAnAccount": "هل لديك حساب بالفعل؟",
+    "forgetPassword": "نسيت كلمة المرور؟",
+    "dontHaveAccount": "ليس لديك حساب؟ ",
+    "createOne": "إنشاء حساب",
+    "or": "أو",
+    "loginWithGoogle": "تسجيل الدخول باستخدام جوجل",
+    "verifyEmail": "التحقق من البريد الإلكتروني"
 }

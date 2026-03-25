@@ -3,6 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:movies_app/core/constant/app_routes.dart';
 import 'package:movies_app/core/responsive/responsive_config.dart';
 import 'package:movies_app/core/theme/app_theme.dart';
+import 'package:movies_app/features/auth_flow/views/forget_password_view.dart';
+import 'package:movies_app/features/auth_flow/views/login_view.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/onboarding/onboarding_screen.dart';
 import 'package:movies_app/features/splash/splash_screen.dart';
@@ -53,11 +55,13 @@ class MoviesApp extends StatelessWidget {
 
 
       theme: AppTheme.theme,
-      initialRoute: AppRoutes.splash,
+      initialRoute: AppRoutes.login,
       routes: {
         AppRoutes.splash: (context) => const SplashScreen(),
         AppRoutes.onboarding: (context) => const OnboardingScreen(),
         AppRoutes.register: (context) => RegisterView(),
+        AppRoutes.login: (context) => const LoginView(),
+         AppRoutes.forgetPassword: (context) => const ForgetPasswordView(),
       },
     );
   }

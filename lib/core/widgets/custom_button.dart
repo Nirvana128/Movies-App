@@ -8,13 +8,14 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isOutlined;
   final bool isOnboarding;
+  final Widget? icon;
 
   const CustomButton({
     super.key,
     required this.text,
     required this.onPressed,
     this.isOutlined = false,
-    this.isOnboarding = false,
+    this.isOnboarding = false, this.icon,
   });
 
   @override
@@ -48,15 +49,25 @@ class CustomButton extends StatelessWidget {
                 ),
               ),
               onPressed: onPressed,
-              child: Text(
-                text,
-                style: isOnboarding
-                    ? GoogleFonts.inter(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.backgroundColor,
-                      )
-                    : AppTextStyles.regular20(color: AppColors.backgroundColor),
+              child:  Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (icon != null) ...[
+                    icon!,
+                    const SizedBox(width: 8),
+                  ],
+                  Text(
+                    text,
+                    style: isOnboarding
+                        ? GoogleFonts.inter(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.backgroundColor,
+                    )
+                        : AppTextStyles.regular20(color: AppColors.backgroundColor),
+                  ),
+                ],
               ),
             ),
     );
