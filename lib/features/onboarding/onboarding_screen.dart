@@ -196,7 +196,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           text: screens[index].primaryButtonText,
                           onPressed: () {
                             if (currentIndex == screens.length - 1) {
-                              Navigator.pushNamedAndRemoveUntil(context, AppRoutes.register, (route) => false);
+                              Navigator.pushNamedAndRemoveUntil(context, AppRoutes.login, (route) => false);
                             } else {
                               _pageController.nextPage(
                                 duration: const Duration(milliseconds: 300),
