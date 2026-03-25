@@ -7,12 +7,11 @@ import 'package:movies_app/features/auth_flow/views/forget_password_view.dart';
 import 'package:movies_app/features/auth_flow/views/login_view.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/onboarding/onboarding_screen.dart';
+import 'package:movies_app/features/profile/Editing_Profile.dart';
 import 'package:movies_app/features/splash/splash_screen.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
 import 'package:movies_app/providers/language_provider.dart';
 import 'package:provider/provider.dart';
-
-
 
 void main() {
   runApp(
@@ -30,7 +29,7 @@ class MoviesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
     ResponsiveConfig.init(context);
-    
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Movies App',
@@ -39,7 +38,6 @@ class MoviesApp extends StatelessWidget {
       supportedLocales: AppLocalizations.supportedLocales,
       locale: Locale(languageProvider.currentLanguage),
 
-      // dynamic font based on locale
       builder: (context, child) {
         final lang = languageProvider.currentLanguage;
 
@@ -53,7 +51,6 @@ class MoviesApp extends StatelessWidget {
         );
       },
 
-
       theme: AppTheme.theme,
       initialRoute: AppRoutes.onboarding,
       routes: {
@@ -61,7 +58,8 @@ class MoviesApp extends StatelessWidget {
         AppRoutes.onboarding: (context) => const OnboardingScreen(),
         AppRoutes.register: (context) => RegisterView(),
         AppRoutes.login: (context) => const LoginView(),
-         AppRoutes.forgetPassword: (context) => const ForgetPasswordView(),
+        AppRoutes.forgetPassword: (context) => const ForgetPasswordView(),
+        AppRoutes.EditProfileScreen: (context) => const EditProfileScreen(),
       },
     );
   }
