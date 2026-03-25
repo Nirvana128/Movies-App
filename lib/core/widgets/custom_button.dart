@@ -8,6 +8,8 @@ class CustomButton extends StatelessWidget {
   final VoidCallback onPressed;
   final bool isOutlined;
   final bool isOnboarding;
+  final Color? backgroundColor;
+  final Color? textColor;
 
   const CustomButton({
     super.key,
@@ -15,6 +17,8 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     this.isOutlined = false,
     this.isOnboarding = false,
+    this.backgroundColor,
+    this.textColor,
   });
 
   @override
@@ -36,13 +40,13 @@ class CustomButton extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: 20,
                   fontWeight: FontWeight.w600,
-                  color: AppColors.primaryColor,
+                  color: textColor ?? AppColors.primaryColor,
                 ),
               ),
             )
           : ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.primaryColor,
+                backgroundColor: backgroundColor ?? AppColors.primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
@@ -54,9 +58,11 @@ class CustomButton extends StatelessWidget {
                     ? GoogleFonts.inter(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
-                        color: AppColors.backgroundColor,
+                        color: textColor ?? AppColors.backgroundColor,
                       )
-                    : AppTextStyles.regular20(color: AppColors.backgroundColor),
+                    : AppTextStyles.regular20(
+                        color: textColor ?? AppColors.backgroundColor,
+                      ),
               ),
             ),
     );

@@ -157,6 +157,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Already have an account? '**
   String get alreadyHaveAnAccount;
+
+  /// No description provided for @pick_avatar.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick Avatar'**
+  String get pick_avatar;
+
+  /// No description provided for @delete_account.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Account'**
+  String get delete_account;
+
+  /// No description provided for @update_data.
+  ///
+  /// In en, this message translates to:
+  /// **'Update Data'**
+  String get update_data;
+
+  /// No description provided for @reset_password.
+  ///
+  /// In en, this message translates to:
+  /// **'Reset Password'**
+  String get reset_password;
+
+  /// No description provided for @profile_updated_success.
+  ///
+  /// In en, this message translates to:
+  /// **'Profile Updated Successfully!'**
+  String get profile_updated_success;
 }
 
 class _AppLocalizationsDelegate
