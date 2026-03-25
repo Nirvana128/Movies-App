@@ -10,9 +10,8 @@ import 'package:movies_app/l10n/app_localizations.dart';
 import 'package:movies_app/providers/language_provider.dart';
 import 'package:provider/provider.dart';
 
-
-
 void main() {
+  // test the editing
   runApp(
     ChangeNotifierProvider(
       create: (context) => LanguageProvider(),
@@ -28,7 +27,7 @@ class MoviesApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
     ResponsiveConfig.init(context);
-    
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Movies App',
@@ -50,7 +49,6 @@ class MoviesApp extends StatelessWidget {
           child: child!,
         );
       },
-
 
       theme: AppTheme.theme,
       initialRoute: AppRoutes.splash,
