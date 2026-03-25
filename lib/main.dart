@@ -5,6 +5,7 @@ import 'package:movies_app/core/responsive/responsive_config.dart';
 import 'package:movies_app/core/theme/app_theme.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/onboarding/onboarding_screen.dart';
+import 'package:movies_app/features/profile/Editing_Profile.dart';
 import 'package:movies_app/features/splash/splash_screen.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
 import 'package:movies_app/providers/language_provider.dart';
@@ -56,6 +57,7 @@ class MoviesApp extends StatelessWidget {
         AppRoutes.splash: (context) => const SplashScreen(),
         AppRoutes.onboarding: (context) => const OnboardingScreen(),
         AppRoutes.register: (context) => RegisterView(),
+        AppRoutes.EditProfileScreen: (context) => const EditProfileScreen(),
       },
     );
   }

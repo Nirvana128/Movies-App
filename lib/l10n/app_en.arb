@@ -19,5 +19,10 @@
   "createAccount": "Create Account",
   "@createAccount": {},
   "alreadyHaveAnAccount": "Already have an account? ",
-  "@alreadyHaveAnAccount": {}
+  "@alreadyHaveAnAccount": {},
+    "pick_avatar": "Pick Avatar",
+  "delete_account": "Delete Account",
+  "update_data": "Update Data",
+  "reset_password": "Reset Password",
+  "profile_updated_success": "Profile Updated Successfully!"
 }
