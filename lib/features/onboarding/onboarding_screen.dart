@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/constant/app_routes.dart';
 import '../../core/theme/app_colors.dart';
 import '../../core/widgets/custom_button.dart';
 
@@ -137,6 +138,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         const SizedBox(height: 32),
                         CustomButton(
                           text: screens[index].primaryButtonText,
+                          isOnboarding: true,
                           onPressed: () {
                             _pageController.nextPage(
                               duration: const Duration(milliseconds: 300),
@@ -190,10 +192,11 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           const SizedBox(height: 32),
                         ],
                         CustomButton(
+                          isOnboarding: true,
                           text: screens[index].primaryButtonText,
                           onPressed: () {
                             if (currentIndex == screens.length - 1) {
-                              print("Go To Login");
+                              Navigator.pushNamedAndRemoveUntil(context, AppRoutes.register, (route) => false);
                             } else {
                               _pageController.nextPage(
                                 duration: const Duration(milliseconds: 300),
@@ -205,6 +208,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         if (screens[index].hasBackButton) ...[
                           const SizedBox(height: 16),
                           CustomButton(
+                            isOnboarding: true,
                             text: 'Back',
                             isOutlined: true,
                             onPressed: () {
