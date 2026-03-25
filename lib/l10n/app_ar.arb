@@ -10,5 +10,10 @@
     "confirmPassword": "تأكيد كلمة المرور",
     "phoneNumber": "رقم الهاتف",
     "createAccount": "إنشاء حساب",
-    "alreadyHaveAnAccount": "هل لديك حساب بالفعل؟"
+    "alreadyHaveAnAccount": "هل لديك حساب بالفعل؟",
+        "pick_avatar": "اختيار الصورة",
+    "delete_account": "حذف الحساب",
+    "update_data": "تحديث البيانات",
+    "reset_password": "إعادة تعيين كلمة المرور",
+    "profile_updated_success": "تم تحديث البيانات بنجاح!"
 }
