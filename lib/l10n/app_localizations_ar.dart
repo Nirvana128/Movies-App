@@ -37,4 +37,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get alreadyHaveAnAccount => 'هل لديك حساب بالفعل؟';
+
+  @override
+  String get forgetPassword => 'نسيت كلمة المرور؟';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟ ';
+
+  @override
+  String get createOne => 'إنشاء حساب';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get loginWithGoogle => 'تسجيل الدخول باستخدام جوجل';
+
+  @override
+  String get verifyEmail => 'التحقق من البريد الإلكتروني';
+
+  @override
+  String get pick_avatar => 'اختيار الصورة';
+
+  @override
+  String get delete_account => 'حذف الحساب';
+
+  @override
+  String get update_data => 'تحديث البيانات';
+
+  @override
+  String get reset_password => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get profile_updated_success => 'تم تحديث البيانات بنجاح!';
 }
