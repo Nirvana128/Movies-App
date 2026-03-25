@@ -1,0 +1,23 @@
+{
+  "@@locale": "en",
+  "register": "Register",
+  "@register": {},
+  "login": "Login",
+  "@login": {},
+  "avatar": "Avatar",
+  "@avatar": {},
+  "name": "Name",
+  "@name": {},
+  "email": "Email",
+  "@email": {},
+  "password": "Password",
+  "@password": {},
+  "confirmPassword": "Confirm Password",
+  "@confirmPassword": {},
+  "phoneNumber": "Phone Number",
+  "@phoneNumber": {},
+  "createAccount": "Create Account",
+  "@createAccount": {},
+  "alreadyHaveAnAccount": "Already have an account? ",
+  "@alreadyHaveAnAccount": {}
+}
