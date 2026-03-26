@@ -4,10 +4,9 @@ import '../theme/app_colors.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
-  final dynamic prefixIcon;
+  final String prefixIcon;
   final bool isPassword;
   final Widget? suffixIcon;
-  final TextEditingController? controller;
 
   const CustomTextField({
     super.key,
@@ -15,21 +14,17 @@ class CustomTextField extends StatelessWidget {
     required this.prefixIcon,
     this.isPassword = false,
     this.suffixIcon,
-    this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: controller,
       obscureText: isPassword,
       style: AppTextStyles.regular16(color: AppColors.white),
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: AppTextStyles.regular16(color: AppColors.white),
-        prefixIcon: prefixIcon is IconData
-            ? Icon(prefixIcon, color: AppColors.white)
-            : ImageIcon(AssetImage(prefixIcon), color: AppColors.white),
+        prefixIcon: ImageIcon(AssetImage(prefixIcon), color: AppColors.white),
         suffixIcon: suffixIcon,
         filled: true,
         fillColor: AppColors.secondaryBackgroundColor,
