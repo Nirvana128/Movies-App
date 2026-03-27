@@ -52,7 +52,9 @@ class MoviesApp extends StatelessWidget {
       },
 
       theme: AppTheme.theme,
+
       initialRoute: AppRoutes.onboarding,
+
       routes: {
         AppRoutes.splash: (context) => const SplashScreen(),
         AppRoutes.onboarding: (context) => const OnboardingScreen(),

@@ -39,6 +39,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get alreadyHaveAnAccount => 'هل لديك حساب بالفعل؟';
 
   @override
+
   String get forgetPassword => 'نسيت كلمة المرور؟';
 
   @override
@@ -57,6 +58,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get verifyEmail => 'التحقق من البريد الإلكتروني';
 
   @override
+
   String get pick_avatar => 'اختيار الصورة';
 
   @override

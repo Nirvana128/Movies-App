@@ -57,6 +57,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get verifyEmail => 'Verify Email';
 
   @override
+
   String get pick_avatar => 'Pick Avatar';
 
   @override
