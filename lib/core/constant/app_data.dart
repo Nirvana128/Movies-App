@@ -1,4 +1,4 @@
-import '../../core/constant/Assets.dart';
+import 'package:movies_app/core/constant/assets.dart';
 
 class AppData {
   static const List<String> allAvatars = [

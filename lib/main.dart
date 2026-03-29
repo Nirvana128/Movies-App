@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movies_app/core/constant/app_routes.dart';
@@ -7,13 +8,16 @@ import 'package:movies_app/features/auth_flow/views/forget_password_view.dart';
 import 'package:movies_app/features/auth_flow/views/login_view.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/onboarding/onboarding_screen.dart';
-import 'package:movies_app/features/profile/Editing_Profile.dart';
+import 'package:movies_app/features/profile/editing_profile.dart';
 import 'package:movies_app/features/splash/splash_screen.dart';
+import 'package:movies_app/firebase_options.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
 import 'package:movies_app/providers/language_provider.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     ChangeNotifierProvider(
       create: (context) => LanguageProvider(),
@@ -61,7 +65,7 @@ class MoviesApp extends StatelessWidget {
         AppRoutes.register: (context) => RegisterView(),
         AppRoutes.login: (context) => const LoginView(),
         AppRoutes.forgetPassword: (context) => const ForgetPasswordView(),
-        AppRoutes.EditProfileScreen: (context) => const EditProfileScreen(),
+        AppRoutes.editProfileScreen: (context) => const EditProfileScreen(),
       },
     );
   }
