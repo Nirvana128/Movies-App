@@ -7,7 +7,7 @@ import 'package:movies_app/features/auth_flow/views/forget_password_view.dart';
 import 'package:movies_app/features/auth_flow/views/login_view.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/onboarding/onboarding_screen.dart';
-import 'package:movies_app/features/profile/Editing_Profile.dart';
+import 'package:movies_app/features/profile/editing_profile.dart';
 import 'package:movies_app/features/splash/splash_screen.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
 import 'package:movies_app/providers/language_provider.dart';
@@ -53,7 +53,7 @@ class MoviesApp extends StatelessWidget {
 
       theme: AppTheme.theme,
 
-      initialRoute: AppRoutes.onboarding,
+      initialRoute: AppRoutes.editProfileScreen,
 
       routes: {
         AppRoutes.splash: (context) => const SplashScreen(),
@@ -61,7 +61,7 @@ class MoviesApp extends StatelessWidget {
         AppRoutes.register: (context) => RegisterView(),
         AppRoutes.login: (context) => const LoginView(),
         AppRoutes.forgetPassword: (context) => const ForgetPasswordView(),
-        AppRoutes.EditProfileScreen: (context) => const EditProfileScreen(),
+        AppRoutes.editProfileScreen: (context) => const EditProfileScreen(),
       },
     );
   }

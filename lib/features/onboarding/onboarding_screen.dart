@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../core/constant/app_routes.dart';
-import '../../core/theme/app_colors.dart';
-import '../../core/widgets/custom_button.dart';
+import 'package:movies_app/core/constant/app_routes.dart';
+import 'package:movies_app/core/theme/app_colors.dart';
+import 'package:movies_app/core/widgets/custom_button.dart';
 
 class OnboardingModel {
   final String imagePath;

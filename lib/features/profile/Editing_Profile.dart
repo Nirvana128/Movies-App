@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/constant/AppData.dart';
+import 'package:movies_app/core/constant/app_data.dart';
 import 'package:movies_app/core/extensions/responsive_padding_extension.dart';
 import 'package:movies_app/core/extensions/responsive_size_extension.dart';
 import 'package:movies_app/core/extensions/responsive_sized_box_extension.dart';
@@ -7,8 +7,8 @@ import 'package:movies_app/core/theme/app_colors.dart';
 import 'package:movies_app/core/theme/app_text_styles.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
 
-import '../../core/widgets/custom_text_field.dart';
-import '../../core/widgets/custom_button.dart';
+import 'package:movies_app/core/widgets/custom_text_field.dart';
+import 'package:movies_app/core/widgets/custom_button.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({super.key});
@@ -78,6 +78,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               hintText: AppLocalizations.of(context)!.phoneNumber,
               prefixIcon: Icons.phone,
             ),
+            16.verticalSizedBox,
             Align(
               alignment: AlignmentDirectional.centerStart,
               child: TextButton(
@@ -149,7 +150,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(16),
                         color: isSelected
-                            ? AppColors.primaryTransparent
+                            ? AppColors.primaryColor.withValues(alpha: 0.5)
                             : AppColors.transparent,
                         border: Border.all(
                           color: AppColors.primaryColor,
