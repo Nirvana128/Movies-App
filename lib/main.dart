@@ -9,7 +9,7 @@ import 'package:movies_app/features/auth_flow/views/login_view.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/initial_flow/onboarding/onboarding_screen.dart';
 import 'package:movies_app/features/main_layout/main_layout_view.dart';
-import 'package:movies_app/features/profile/editing_profile.dart';
+import 'package:movies_app/features/main_layout/profile/editing_profile.dart';
 import 'package:movies_app/features/initial_flow/splash/splash_screen.dart';
 import 'package:movies_app/firebase_options.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
