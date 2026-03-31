@@ -47,7 +47,9 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
               ),
-              CustomButton(text: local.login, onPressed: () {}),
+              CustomButton(text: local.login, onPressed: () {
+                Navigator.pushNamedAndRemoveUntil(context, AppRoutes.mainLayoutView, (route) => false);
+              }),
               //Login Button
               Text.rich(
                 TextSpan(

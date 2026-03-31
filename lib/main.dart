@@ -7,9 +7,10 @@ import 'package:movies_app/core/theme/app_theme.dart';
 import 'package:movies_app/features/auth_flow/views/forget_password_view.dart';
 import 'package:movies_app/features/auth_flow/views/login_view.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
-import 'package:movies_app/features/onboarding/onboarding_screen.dart';
+import 'package:movies_app/features/initial_flow/onboarding/onboarding_screen.dart';
+import 'package:movies_app/features/main_layout/main_layout_view.dart';
 import 'package:movies_app/features/profile/editing_profile.dart';
-import 'package:movies_app/features/splash/splash_screen.dart';
+import 'package:movies_app/features/initial_flow/splash/splash_screen.dart';
 import 'package:movies_app/firebase_options.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
 import 'package:movies_app/providers/language_provider.dart';
@@ -66,6 +67,7 @@ class MoviesApp extends StatelessWidget {
         AppRoutes.login: (context) => const LoginView(),
         AppRoutes.forgetPassword: (context) => const ForgetPasswordView(),
         AppRoutes.editProfileScreen: (context) => const EditProfileScreen(),
+        AppRoutes.mainLayoutView: (context) => const MainLayoutView(),
       },
     );
   }
