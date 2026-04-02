@@ -64,11 +64,13 @@ class _MainLayoutViewState extends State<MainLayoutView> {
           ),
         ),
         body: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              tabs[currentIndex],
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                tabs[currentIndex],
+              ],
+            ),
           ),
         ),
       ),

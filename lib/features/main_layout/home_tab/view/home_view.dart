@@ -1,55 +1,35 @@
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constant/app_assets.dart';
-import 'package:movies_app/core/extensions/responsive_size_extension.dart';
-import 'package:movies_app/core/theme/app_colors.dart';
+import 'package:movies_app/core/extensions/responsive_sized_box_extension.dart';
+import 'package:movies_app/features/main_layout/home_tab/widget/movies_category_section.dart';
+import 'package:movies_app/features/main_layout/home_tab/widget/new_movies_section.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Stack(
-            children: [
-              Container(
-                height: 600.height,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(AppAssets.movie),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-              Container(
-                height: 600.height,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      AppColors.backgroundColor.withValues(alpha: 0.8),
-                      AppColors.backgroundColor.withValues(alpha: 0.6),
-                      AppColors.backgroundColor
-                    ],
-                  ),
-                ),
-                child: Column(
-                  children: [
-                    Image.asset(AppAssets.availableNow),
-                    const SizedBox(height: 16),
-                    Image.asset(AppAssets.watchNow),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
+    List<String> imageList = [
+      AppAssets.movie,
+      AppAssets.movie,
+      AppAssets.movie,
+      AppAssets.movie,
+      AppAssets.movie,
+    ];
+
+    return Column(
+      children: [
+        NewMoviesSection(imageList: imageList),
+
+        25.verticalSizedBox,
+        MoviesCategorySection(),
+
+        25.verticalSizedBox,
+        MoviesCategorySection(),
+
+        25.verticalSizedBox,
+        MoviesCategorySection(),
+      ],
     );
   }
 }

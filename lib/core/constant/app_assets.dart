@@ -22,6 +22,7 @@ class AppAssets {
   static const String availableNow = 'assets/images/available_now.png';
   static const String watchNow = 'assets/images/watch_now.png';
   static const String movie = 'assets/images/movie.png';
+  static const String movie2 = 'assets/images/movie2.png';
 
   // Icons
   static const String homeIcon = 'assets/icons/home.png';
