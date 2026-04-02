@@ -18,6 +18,11 @@ class AppAssets {
   static const String onboarding5 = 'assets/images/onboarding5.png';
   static const String onboarding11 = 'assets/images/onboarding11.png';
 
+  // Home tab images
+  static const String availableNow = 'assets/images/available_now.png';
+  static const String watchNow = 'assets/images/watch_now.png';
+  static const String movie = 'assets/images/movie.png';
+
   // Icons
   static const String homeIcon = 'assets/icons/home.png';
   static const String searchIcon = 'assets/icons/search.png';

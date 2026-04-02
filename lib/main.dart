@@ -9,26 +9,30 @@ import 'package:movies_app/features/auth_flow/views/login_view.dart';
 import 'package:movies_app/features/auth_flow/views/register_view.dart';
 import 'package:movies_app/features/initial_flow/onboarding/onboarding_screen.dart';
 import 'package:movies_app/features/main_layout/main_layout_view.dart';
-import 'package:movies_app/features/main_layout/profile/editing_profile.dart';
 import 'package:movies_app/features/initial_flow/splash/splash_screen.dart';
+import 'package:movies_app/features/main_layout/profile_tab/Editing_Profile.dart';
 import 'package:movies_app/firebase_options.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
 import 'package:movies_app/providers/language_provider.dart';
+import 'package:movies_app/services/prefs_service.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  final bool seenIntro = await PrefsService.hasSeenIntro();
   runApp(
     ChangeNotifierProvider(
       create: (context) => LanguageProvider(),
-      child: const MoviesApp(),
+      child: MoviesApp(seenIntro: seenIntro),
     ),
   );
 }
 
 class MoviesApp extends StatelessWidget {
-  const MoviesApp({super.key});
+  final bool seenIntro;
+  
+  const MoviesApp({super.key, required this.seenIntro});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +62,7 @@ class MoviesApp extends StatelessWidget {
 
       theme: AppTheme.theme,
 
-      initialRoute: AppRoutes.onboarding,
+      initialRoute: getInitialRoute(),
 
       routes: {
         AppRoutes.splash: (context) => const SplashScreen(),
@@ -66,9 +70,17 @@ class MoviesApp extends StatelessWidget {
         AppRoutes.register: (context) => RegisterView(),
         AppRoutes.login: (context) => const LoginView(),
         AppRoutes.forgetPassword: (context) => const ForgetPasswordView(),
-        AppRoutes.editProfileScreen: (context) => const EditProfileScreen(),
+        AppRoutes.editProfileScreen: (context) => EditProfileScreen(),
         AppRoutes.mainLayoutView: (context) => const MainLayoutView(),
       },
     );
+  }
+
+  String getInitialRoute() {
+    if (!seenIntro) {
+      return AppRoutes.onboarding;
+    } else {
+      return AppRoutes.mainLayoutView;
+    }
   }
 }

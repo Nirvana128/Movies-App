@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/constant/assets.dart';
+import 'package:movies_app/core/constant/app_assets.dart';
 import 'package:movies_app/core/extensions/responsive_padding_extension.dart';
 import 'package:movies_app/core/responsive/responsive_config.dart';
+import 'package:movies_app/features/main_layout/home_tab/view/home_view.dart';
 
 class MainLayoutView extends StatefulWidget {
   const MainLayoutView({super.key});
@@ -12,7 +13,7 @@ class MainLayoutView extends StatefulWidget {
 
 class _MainLayoutViewState extends State<MainLayoutView> {
   int currentIndex = 0;
-  List<Widget> tabs = [Container(), Container(), Container(), Container()];
+  List<Widget> tabs = [HomeView(), Container(), Container(), Container()];
 
   @override
   Widget build(BuildContext context) {
@@ -63,9 +64,11 @@ class _MainLayoutViewState extends State<MainLayoutView> {
           ),
         ),
         body: SafeArea(
-          child: Padding(
-            padding: 16.horizontalPadding,
-            child: tabs[currentIndex],
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              tabs[currentIndex],
+            ],
           ),
         ),
       ),

@@ -10,6 +10,7 @@ import 'package:movies_app/core/widgets/custom_text_field.dart';
 import 'package:movies_app/features/auth_flow/widgets/language_switcher.dart';
 import 'package:movies_app/generated/assets.dart';
 import 'package:movies_app/l10n/app_localizations.dart';
+import 'package:movies_app/services/prefs_service.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -48,6 +49,7 @@ class LoginView extends StatelessWidget {
                 ),
               ),
               CustomButton(text: local.login, onPressed: () {
+                PrefsService.setIntroSeen();
                 Navigator.pushNamedAndRemoveUntil(context, AppRoutes.mainLayoutView, (route) => false);
               }),
               //Login Button
