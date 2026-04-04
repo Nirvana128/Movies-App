@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movies_app/core/extensions/responsive_size_extension.dart';
 import 'package:movies_app/core/theme/app_text_styles.dart';
 import 'package:movies_app/core/theme/app_colors.dart';
 
@@ -27,6 +28,19 @@ class AppTheme {
           TextStyle(decoration: TextDecoration.underline, fontSize: 12),
         ),
       ),
+    ),
+
+    navigationBarTheme: NavigationBarThemeData(
+      backgroundColor: AppColors.secondaryBackgroundColor,
+      elevation: 0,
+      indicatorColor: Colors.transparent,
+      height: 65.height,
+      iconTheme: WidgetStateProperty.resolveWith((states) {
+        if (states.contains(WidgetState.selected)) {
+          return const IconThemeData(color: AppColors.primaryColor, size: 28);
+        }
+        return const IconThemeData(color: AppColors.white, size: 28);
+      }),
     ),
   );
 }

@@ -87,7 +87,7 @@ class _RegisterViewState extends State<RegisterView> {
     }
   }
 
-  @override
+@override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

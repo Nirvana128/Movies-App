@@ -1,4 +1,4 @@
-class Assets {
+class AppAssets {
   // Avatars
   static const String avatar1 = 'assets/images/avatar1.png';
   static const String avatar2 = 'assets/images/avatar2.png';
@@ -18,8 +18,15 @@ class Assets {
   static const String onboarding5 = 'assets/images/onboarding5.png';
   static const String onboarding11 = 'assets/images/onboarding11.png';
 
-  // Icons / Logos
-  static const String playIcon = 'assets/images/play_icon.png';
-  static const String routeLogo = 'assets/images/route_logo.png';
-  static const String supervisedBy = 'assets/images/supervised_by.png';
+  // Home tab images
+  static const String availableNow = 'assets/images/available_now.png';
+  static const String watchNow = 'assets/images/watch_now.png';
+  static const String movie = 'assets/images/movie.png';
+  static const String movie2 = 'assets/images/movie2.png';
+
+  // Icons
+  static const String homeIcon = 'assets/icons/home.png';
+  static const String searchIcon = 'assets/icons/search.png';
+  static const String profileIcon = 'assets/icons/profile.png';
+  static const String exploreIcon = 'assets/icons/explore.png';
 }

@@ -1,15 +1,15 @@
-import 'package:movies_app/core/constant/assets.dart';
+import 'package:movies_app/core/constant/app_assets.dart';
 
 class AppData {
   static const List<String> allAvatars = [
-    Assets.avatar1,
-    Assets.avatar2,
-    Assets.avatar3,
-    Assets.avatar4,
-    Assets.avatar5,
-    Assets.avatar6,
-    Assets.avatar7,
-    Assets.avatar8,
-    Assets.avatar9,
+    AppAssets.avatar1,
+    AppAssets.avatar2,
+    AppAssets.avatar3,
+    AppAssets.avatar4,
+    AppAssets.avatar5,
+    AppAssets.avatar6,
+    AppAssets.avatar7,
+    AppAssets.avatar8,
+    AppAssets.avatar9,
   ];
 }
