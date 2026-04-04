@@ -67,7 +67,7 @@ class _NewMoviesSectionState extends State<NewMoviesSection> {
                 items: widget.imageList.map((i) {
                   return Builder(
                     builder: (BuildContext context) {
-                      return MoviesContainer(i: i);
+                      return MoviesContainer(movie: i, isHeader: true,);
                     },
                   );
                 }).toList(),

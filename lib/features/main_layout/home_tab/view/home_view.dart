@@ -14,7 +14,12 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => HomeViewModel()..fetchNewMovies(),
+      create: (context){
+        final homeViewModel = HomeViewModel();
+        homeViewModel.fetchNewMovies();
+        homeViewModel.fetchRandomCategories();
+        return homeViewModel;
+      },
       child: Consumer<HomeViewModel>(
         builder: (context, homeViewModel, child) {
           if (homeViewModel.isLoading) {
@@ -27,13 +32,22 @@ class HomeView extends StatelessWidget {
                 NewMoviesSection(imageList: homeViewModel.movies),
 
                 25.verticalSizedBox,
-                MoviesCategorySection(),
+                MoviesCategorySection(
+                  title: homeViewModel.genre1Title,
+                  movies: homeViewModel.genre1Movies,
+                ),
 
                 25.verticalSizedBox,
-                MoviesCategorySection(),
+                MoviesCategorySection(
+                  title: homeViewModel.genre2Title,
+                  movies: homeViewModel.genre2Movies,
+                ),
 
                 25.verticalSizedBox,
-                MoviesCategorySection(),
+                MoviesCategorySection(
+                  title: homeViewModel.genre3Title,
+                  movies: homeViewModel.genre3Movies,
+                ),
               ],
             );
           } else {

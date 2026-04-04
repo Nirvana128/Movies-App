@@ -8,18 +8,19 @@ import 'package:movies_app/features/main_layout/home_tab/widget/movie_image.dart
 import 'package:movies_app/models/new_movies_model/movie.dart';
 
 class MoviesContainer extends StatelessWidget {
-  final Movie? i;
-  const MoviesContainer({super.key, this.i});
+  final Movie? movie;
+  final bool isHeader;
+  const MoviesContainer({super.key, this.movie, this.isHeader = false});
 
   @override
   Widget build(BuildContext context) {
-    final movie = i;
+    final movie = this.movie;
     return Stack(
       children: [
         Container(
-          height: (i != null) ? 300.height : 220.height,
-          width: (i != null) ? 220.width : 150.width,
-          margin: (i != null)
+          height: (isHeader) ? 300.height : 220.height,
+          width: (isHeader) ? 220.width : 150.width,
+          margin: (isHeader)
               ? EdgeInsets.symmetric(horizontal: 5.width)
               : EdgeInsets.zero,
           clipBehavior: Clip.antiAlias,
@@ -42,7 +43,7 @@ class MoviesContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  i?.rating.toString() ?? 'N/A',
+                  movie?.rating.toString() ?? 'N/A',
                   style: AppTextStyles.regular16(),
                 ),
 

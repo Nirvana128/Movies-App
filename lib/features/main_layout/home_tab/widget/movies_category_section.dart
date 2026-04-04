@@ -5,10 +5,15 @@ import 'package:movies_app/core/extensions/responsive_sized_box_extension.dart';
 import 'package:movies_app/core/theme/app_colors.dart';
 import 'package:movies_app/core/theme/app_text_styles.dart';
 import 'package:movies_app/features/main_layout/home_tab/widget/movies_container.dart';
+import 'package:movies_app/models/new_movies_model/movie.dart';
 
 class MoviesCategorySection extends StatelessWidget {
+  final String title;
+  final List<Movie> movies;
   const MoviesCategorySection({
     super.key,
+    required this.title,
+    required this.movies,
   });
 
   @override
@@ -20,7 +25,7 @@ class MoviesCategorySection extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text('Action', style: AppTextStyles.regular20()),
+              Text(title, style: AppTextStyles.regular20()),
               Spacer(),
               TextButton(
                 style: TextButton.styleFrom(
@@ -55,9 +60,9 @@ class MoviesCategorySection extends StatelessWidget {
             child: ListView.separated(
               shrinkWrap: true,
               scrollDirection: Axis.horizontal,
-              itemCount: 5,
+              itemCount: movies.length,
               itemBuilder: (context, index) {
-                return MoviesContainer();
+                return MoviesContainer(movie: movies[index],);
               },
               separatorBuilder: (context, index) {
                 return 16.horizontalSizedBox;
