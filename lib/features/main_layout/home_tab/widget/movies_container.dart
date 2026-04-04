@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constant/app_assets.dart';
 import 'package:movies_app/core/extensions/responsive_padding_extension.dart';
@@ -5,24 +6,37 @@ import 'package:movies_app/core/extensions/responsive_size_extension.dart';
 import 'package:movies_app/core/extensions/responsive_sized_box_extension.dart';
 import 'package:movies_app/core/theme/app_colors.dart';
 import 'package:movies_app/core/theme/app_text_styles.dart';
+import 'package:movies_app/models/new_movies_model/movie.dart';
 
 class MoviesContainer extends StatelessWidget {
-  final String? i;
+  final Movie? i;
   final String? img;
   const MoviesContainer({super.key, this.i, this.img});
 
   @override
   Widget build(BuildContext context) {
+    final movie = i;
     return Stack(
       children: [
         Container(
           height: (i != null) ? 300.height : 220.height,
           width: (i != null) ? null : 150.width,
-          margin: (i != null) ? EdgeInsets.symmetric(horizontal: 5.width) : EdgeInsets.zero,
+          margin: (i != null)
+              ? EdgeInsets.symmetric(horizontal: 5.width)
+              : EdgeInsets.zero,
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(image: AssetImage(i ?? img ?? AppAssets.movie), fit: BoxFit.cover),
+            image: DecorationImage(
+              image:
+                  (movie?.largeCoverImage != null &&
+                      movie!.largeCoverImage!.startsWith('http'))
+                  ? CachedNetworkImageProvider(
+                      movie.largeCoverImage ?? img ?? '',
+                    )
+                  : AssetImage(AppAssets.movie) as ImageProvider,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
 
@@ -39,7 +53,7 @@ class MoviesContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '7.7',
+                  i?.rating.toString() ?? 'N/A',
                   style: AppTextStyles.regular16(),
                 ),
 
