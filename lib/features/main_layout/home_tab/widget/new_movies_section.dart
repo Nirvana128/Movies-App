@@ -1,9 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:movies_app/core/constant/app_assets.dart';
 import 'package:movies_app/core/extensions/responsive_size_extension.dart';
 import 'package:movies_app/core/theme/app_colors.dart';
+import 'package:movies_app/features/main_layout/home_tab/widget/movie_image.dart';
 import 'package:movies_app/features/main_layout/home_tab/widget/movies_container.dart';
 import 'package:movies_app/models/new_movies_model/movie.dart';
 
@@ -24,22 +24,12 @@ class _NewMoviesSectionState extends State<NewMoviesSection> {
 
   @override
   Widget build(BuildContext context) {
-    String? currentBgImage = widget.imageList[currentIndex].largeCoverImage;
     return Stack(
       children: [
-        Container(
+        SizedBox(
           height: 600.height,
           width: double.infinity,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: currentBgImage != null
-                  ? CachedNetworkImageProvider(
-                      widget.imageList[currentIndex].largeCoverImage ?? '',
-                    )
-                  : AssetImage(AppAssets.movie),
-              fit: BoxFit.fill,
-            ),
-          ),
+          child: MovieImage(movie: widget.imageList[currentIndex]),
         ),
         Container(
           height: 600.height,

@@ -1,17 +1,15 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/constant/app_assets.dart';
 import 'package:movies_app/core/extensions/responsive_padding_extension.dart';
 import 'package:movies_app/core/extensions/responsive_size_extension.dart';
 import 'package:movies_app/core/extensions/responsive_sized_box_extension.dart';
 import 'package:movies_app/core/theme/app_colors.dart';
 import 'package:movies_app/core/theme/app_text_styles.dart';
+import 'package:movies_app/features/main_layout/home_tab/widget/movie_image.dart';
 import 'package:movies_app/models/new_movies_model/movie.dart';
 
 class MoviesContainer extends StatelessWidget {
   final Movie? i;
-  final String? img;
-  const MoviesContainer({super.key, this.i, this.img});
+  const MoviesContainer({super.key, this.i});
 
   @override
   Widget build(BuildContext context) {
@@ -20,24 +18,15 @@ class MoviesContainer extends StatelessWidget {
       children: [
         Container(
           height: (i != null) ? 300.height : 220.height,
-          width: (i != null) ? null : 150.width,
+          width: (i != null) ? 220.width : 150.width,
           margin: (i != null)
               ? EdgeInsets.symmetric(horizontal: 5.width)
               : EdgeInsets.zero,
           clipBehavior: Clip.antiAlias,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-              image:
-                  (movie?.largeCoverImage != null &&
-                      movie!.largeCoverImage!.startsWith('http'))
-                  ? CachedNetworkImageProvider(
-                      movie.largeCoverImage ?? img ?? '',
-                    )
-                  : AssetImage(AppAssets.movie) as ImageProvider,
-              fit: BoxFit.cover,
-            ),
           ),
+          child: MovieImage(movie: movie)
         ),
 
         Padding(

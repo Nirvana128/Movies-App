@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:movies_app/core/constant/app_assets.dart';
 import 'package:movies_app/core/extensions/responsive_padding_extension.dart';
 import 'package:movies_app/core/extensions/responsive_size_extension.dart';
 import 'package:movies_app/core/extensions/responsive_sized_box_extension.dart';
@@ -58,7 +57,7 @@ class MoviesCategorySection extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: 5,
               itemBuilder: (context, index) {
-                return MoviesContainer(img: AppAssets.movie2);
+                return MoviesContainer();
               },
               separatorBuilder: (context, index) {
                 return 16.horizontalSizedBox;
